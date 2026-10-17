@@ -6,6 +6,15 @@
 
 A portable low-profile wireless 3×5+2 split keyboard.
 
+> [!IMPORTANT]
+> This Rev5 repository is a modification of the original DELTA OMEGA design,
+> converted to the **Gateron KS-33 Low Profile 3.0 five-pin** switch platform.
+> The split wireless architecture and compact 3×5+2 layout are retained. The
+> main changes are the KS-33 PCB footprints, matrix routing and validation,
+> direct-solder switch installation, KS-33-specific case clearance with a
+> raised outer rim, the matching keycap fit envelope, and updated firmware,
+> BOM, build, and mechanical documentation. The original Rev4 ULP PCB and
+> Gerbers remain available for reference.
 
 ## Overview
 
