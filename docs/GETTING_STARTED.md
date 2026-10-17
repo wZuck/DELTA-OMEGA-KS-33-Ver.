@@ -27,8 +27,8 @@ Reference: [Gateron KS-33 Low Profile 3.0](https://www.gateron.com/products/gate
 
 ## Keycaps
 
-The DELTA OMEGA uses **18 × 17 mm key pitch**. KS-33 3.0 has an MX-compatible
-stem, but that does not mean every MX keycap will fit.
+DELTA OMEGA KS-33 Ver. uses an **18 × 17 mm key pitch**. KS-33 3.0 has an
+MX-compatible stem, but that does not mean every MX keycap will fit.
 
 - Use compact low-profile MX keycaps whose bottom footprint stays clear at a
   17 mm row pitch.
@@ -71,7 +71,7 @@ Two ordering options:
 2. Separate left and right PCB files
 
 **Why?**
-Ordering both together requires mouse-bites or V-cuts to split, leaving rough edges. Since DELTA OMEGA leaves the bottom PCB exposed, rough edges and tight tolerances can cause issues.
+Ordering both together requires mouse-bites or V-cuts to split, leaving rough edges. Since DELTA OMEGA KS-33 Ver. leaves the bottom PCB exposed, rough edges and tight tolerances can cause issues.
 
 Cost difference is negligible (1~2 USD), so choose based on preference.
 

@@ -1,6 +1,6 @@
 [English](NOTICE.md) | [简体中文](NOTICE.zh-CN.md)
 
-# DELTA OMEGA Rev5 Modification Notice
+# DELTA OMEGA KS-33 Ver. Modification Notice
 
 This repository contains a modified version of the DELTA OMEGA open hardware
 project originally published at:
@@ -25,9 +25,9 @@ Brief description of modifications:
 - Added firmware configuration, verification scripts, bilingual
   documentation, and manufacturing reproducibility information.
 
-All modified DELTA OMEGA hardware source that is explicitly covered by this
-repository is licensed under the CERN Open Hardware Licence Version 2 -
-Weakly Reciprocal (`CERN-OHL-W-2.0`). The complete licence is retained in
+All modified DELTA OMEGA KS-33 Ver. hardware source that is explicitly covered
+by this repository is licensed under the CERN Open Hardware Licence Version 2
+- Weakly Reciprocal (`CERN-OHL-W-2.0`). The complete licence is retained in
 `LICENSE.md`.
 
 The preferred Source Location for this modified Covered Source is:

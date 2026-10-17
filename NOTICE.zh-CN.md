@@ -1,6 +1,6 @@
 [English](NOTICE.md) | [简体中文](NOTICE.zh-CN.md)
 
-# DELTA OMEGA Rev5 修改通知
+# DELTA OMEGA KS-33 Ver. 修改通知
 
 本仓库包含对以下原始 DELTA OMEGA 开源硬件项目的修改：
 
@@ -21,9 +21,9 @@ https://github.com/wZuck/delta-omega
 - 增加 Rev5 外壳让位几何和键帽允许包络。
 - 增加固件配置、验证脚本、中英文文档和生产可复现信息。
 
-本仓库明确覆盖的 DELTA OMEGA 修改版硬件源码使用 CERN Open Hardware
-Licence Version 2 - Weakly Reciprocal（`CERN-OHL-W-2.0`）。完整许可证保留在
-`LICENSE.md`。
+本仓库明确覆盖的 DELTA OMEGA KS-33 Ver. 修改版硬件源码使用 CERN Open
+Hardware Licence Version 2 - Weakly Reciprocal（`CERN-OHL-W-2.0`）。完整许可证
+保留在 `LICENSE.md`。
 
 修改后 Covered Source 的首选 Source Location：
 

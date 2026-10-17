@@ -3,8 +3,8 @@
 # Third-Party Notices
 
 This file records third-party material referenced by or distributed with the
-DELTA OMEGA Rev5 repository. It does not replace the original licence text of
-any third-party project.
+DELTA OMEGA KS-33 Ver. repository. It does not replace the original licence
+text of any third-party project.
 
 ## ZMK
 

@@ -1,13 +1,13 @@
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-![DELTA OMEGA](./gallery/header.png)
+![DELTA OMEGA KS-33 Ver.](./gallery/header.png)
 
-# DELTA OMEGA
+# DELTA OMEGA KS-33 Ver.
 
 A portable low-profile wireless 3×5+2 split keyboard.
 
 > [!IMPORTANT]
-> This Rev5 repository is a modification of the original DELTA OMEGA design,
+> DELTA OMEGA KS-33 Ver. is a modification of the original DELTA OMEGA design,
 > converted to the **Gateron KS-33 Low Profile 3.0 five-pin** switch platform.
 > The split wireless architecture and compact 3×5+2 layout are retained. The
 > main changes are the KS-33 PCB footprints, matrix routing and validation,
@@ -75,7 +75,7 @@ This is a hobby-driven project. Some aspects may be incomplete, imperfect, or pr
 
 ## License
 
-DELTA OMEGA is licensed under [CERN-OHL-W-2.0](./LICENSE.md).
+DELTA OMEGA KS-33 Ver. is licensed under [CERN-OHL-W-2.0](./LICENSE.md).
 
 See [NOTICE.md](./NOTICE.md) for the Rev5 modification notice and
 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) for third-party components,

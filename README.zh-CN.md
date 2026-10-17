@@ -1,14 +1,14 @@
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-![DELTA OMEGA](./gallery/header.png)
+![DELTA OMEGA KS-33 Ver.](./gallery/header.png)
 
-# DELTA OMEGA
+# DELTA OMEGA KS-33 Ver.
 
 一把便携式、低高度的无线 3×5+2 分体键盘。
 
 > [!IMPORTANT]
-> 本 Rev5 仓库是在原版 DELTA OMEGA 基础上改造的 **Gateron KS-33 Low
-> Profile 3.0 五脚矮轴版本**。改造保留了原来的分体无线架构和紧凑的
+> DELTA OMEGA KS-33 Ver. 是在原版 DELTA OMEGA 基础上改造的 **Gateron
+> KS-33 Low Profile 3.0 五脚矮轴版本**。改造保留了原来的分体无线架构和紧凑的
 > 3×5+2 布局，主要修改包括：重新设计 KS-33 PCB 封装、矩阵连线和电气校验；
 > 改为直焊轴体；调整外壳轴位让位并提高外沿，使其接近键帽顶部；更新键帽允许
 > 包络；同步修订固件、物料清单、装配与机械文档。原始 Rev4 ULP PCB 和
@@ -68,7 +68,7 @@
 
 ## 许可证
 
-DELTA OMEGA 使用 [CERN-OHL-W-2.0](./LICENSE.md) 许可证。
+DELTA OMEGA KS-33 Ver. 使用 [CERN-OHL-W-2.0](./LICENSE.md) 许可证。
 
 Rev5 修改通知见 [NOTICE.zh-CN.md](./NOTICE.zh-CN.md)，第三方组件、许可证、名称和源码状态见
 [THIRD_PARTY_NOTICES.zh-CN.md](./THIRD_PARTY_NOTICES.zh-CN.md)。
