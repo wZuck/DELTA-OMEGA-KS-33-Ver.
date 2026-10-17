@@ -6,7 +6,7 @@
 |------------------|------------------------------------------------------------|----------|--------|
 | MCU Controller   | SeeedStudio XIAO nRF52840                                  | 2        |        |
 | LP MX Switches   | Gateron KS-33 Low Profile 3.0 five-pin; reference `KS-33BS10B043NW-Y92B` | 34 | Direct solder, not hot-swap; verify the 3.0 PCB drawing |
-| LP MX Keycaps    | MX stem; rounded fit envelope: 14×14 r3.5 below rim, 16.6×15.6 r7 above | 34 | See mechanical notes; square-corner MX caps may collide |
+| LP MX Keycaps    | MX stem; rounded fit envelope: 14×14 r3.5 below z=7, 16.6×15.6 r7 above | 34 | Case rim is z=8.8; see mechanical notes |
 | Power Switches   | MK-12C02                                                   | 2        |        |
 | Reset Switches   | EVQ-PUL02K                                                 | 2        | Compatible with EVQ-PU[A\|C\|J\|L]02K |
 | Diodes           | SOD-323                                                    | 34       | 1N4148WS |

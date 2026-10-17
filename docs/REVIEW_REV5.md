@@ -20,12 +20,15 @@
 
 ## Case and Keycaps
 
-- The Rev5 cases add `15.6 mm`, `r2 mm` CNC-compatible pockets at all 34
+- The Rev5 cases add `15.2 mm`, `r1.8 mm` CNC-compatible pockets at all 34
   positions. The rounded KS-33 body envelope has zero modeled interference.
-- A rounded keycap is required: `14 x 14 mm`, `r3.5 mm` below the case rim and
-  `16.6 x 15.6 mm`, `r7.0 mm` above it. Adjacent-key collision checks pass.
+- A rounded keycap is required: `14 x 14 mm`, `r3.5 mm` below `z = 7.0 mm`
+  and `16.6 x 15.6 mm`, `r7.0 mm` above it. Adjacent-key collision checks pass.
 - Electrical pins must be trimmed to at most 0.5 mm below the PCB and insulated
   before the bottom cover is installed.
+- The Rev5 rim is raised to `z = 8.8 mm`, nearly level with the `z = 9.0 mm`
+  keycap envelope top, while preserving the internal opening and mounting
+  geometry.
 
 See [Mechanical Notes](MECHANICAL.md) for the exact dimensions and validation
 command.

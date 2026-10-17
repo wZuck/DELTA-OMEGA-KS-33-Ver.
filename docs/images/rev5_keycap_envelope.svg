@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
   <title id="title">DELTA OMEGA Rev5 keycap fit envelope</title>
-  <desc id="desc">Side profile showing a rounded 14 millimeter lower skirt below the 7 millimeter case rim and a rounded 16.6 by 15.6 millimeter upper keycap envelope above it.</desc>
+  <desc id="desc">Side profile showing a rounded lower keycap skirt and upper envelope, with the case rim at 8.8 millimeters and the keycap envelope top at 9 millimeters.</desc>
   <rect width="1000" height="520" fill="#f4f1e9"/>
   <g stroke="#20211f" stroke-width="3" fill="none">
     <path d="M170 430H850"/>
-    <path d="M190 430V230H810V430"/>
+    <path d="M190 430V209H810V430"/>
   </g>
   <g fill="#d9d4c7" stroke="#20211f" stroke-width="3">
-    <path d="M120 430V230H190V430Z"/>
-    <path d="M810 230H880V430H810Z"/>
+    <path d="M120 430V209H190V430Z"/>
+    <path d="M810 209H880V430H810Z"/>
     <rect x="445" y="390" width="110" height="40"/>
   </g>
   <g fill="#fffaf0" stroke="#c35a35" stroke-width="4">
@@ -19,13 +19,13 @@
     <path d="M500 150V310" stroke-dasharray="8 7"/>
   </g>
   <g fill="#20211f" font-family="Arial, sans-serif" font-size="22">
-    <text x="70" y="250">case rim</text>
-    <text x="745" y="250">case rim</text>
+    <text x="70" y="229">case rim</text>
+    <text x="745" y="229">case rim</text>
     <text x="438" y="378">KS-33</text>
     <text x="305" y="138">upper: 16.6 x 15.6, r7.0</text>
     <text x="286" y="336">lower: 14.0 x 14.0, r3.5</text>
     <text x="170" y="470">PCB top z = 1.6</text>
-    <text x="170" y="500">case rim z = 7.0</text>
+    <text x="170" y="500">case rim z = 8.8</text>
     <text x="630" y="470">envelope top z = 9.0</text>
   </g>
   <g stroke="#20211f" stroke-width="2">

@@ -39,11 +39,15 @@ stem, but that does not mean every MX keycap will fit.
 ![Rev5 keycap fit envelope](./images/rev5_keycap_envelope.svg)
 
 #### Height Considerations
-The Rev5 case has a `15.6 mm`, `r2 mm` relief pocket at every switch and has
+The Rev5 case has a `15.2 mm`, `r1.8 mm` relief pocket at every switch and has
 been checked against the KS-33 3.0 body. The keycap must stay within the
-rounded envelope: `14 x 14 mm`, `r3.5 mm` below the rim and
+rounded envelope: `14 x 14 mm`, `r3.5 mm` below `z = 7.0 mm` and
 `16.6 x 15.6 mm`, `r7.0 mm` above it. See the
 [Rev5 mechanical notes](MECHANICAL.md) and supplied STEP fit envelope.
+
+The Rev5 outer rim is raised to `z = 8.8 mm`, nearly level with the
+`z = 9.0 mm` keycap envelope top. This gives the intended enclosed typing feel
+while preserving the internal opening and mounting geometry.
 
 ## Soldering
 

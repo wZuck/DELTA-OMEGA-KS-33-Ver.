@@ -3,7 +3,7 @@
 # Rev5 Mechanical Notes
 
 Rev5 uses the Gateron KS-33 Low Profile 3.0 five-pin switch. The Rev5 case
-keeps the Rev2 outline and screw pattern but adds a `15.6 mm`, `r2 mm` relief
+keeps the Rev2 outline and screw pattern but adds a `15.2 mm`, `r1.8 mm` relief
 pocket around every switch. This radius is compatible with a normal CNC
 endmill and matches the rounded KS-33 body corners.
 
@@ -33,14 +33,20 @@ The validation checks all 34 switch positions using:
 - PCB top at `z = 1.6 mm`
 - Switch body envelope of `14.6 x 14.6 x 6.2 mm` with `r1.5 mm` corners
 - A rounded 1u keycap envelope with a `14 x 14 mm`, `r3.5 mm` lower skirt
-  below the `z = 7.0 mm` case rim and a `16.6 x 15.6 mm`, `r7.0 mm` upper
-  section above the rim
+  below `z = 7.0 mm` and a `16.6 x 15.6 mm`, `r7.0 mm` upper section above it
 
 ![Rev5 keycap fit envelope](./images/rev5_keycap_envelope.svg)
 
 Result: zero modeled interference for the switch body, keycap-to-case fit, and
 all adjacent keycap pairs. The complete check now includes the reflected
 rotation, CNC-compatible pocket corners, and neighboring-key collisions.
+
+The Rev5 rim is raised from the Rev2 height of `z = 7.0 mm` to
+`z = 8.8 mm`. It is therefore nearly level with the `z = 9.0 mm` keycap
+envelope top, producing the intended enclosed typing feel. The generator
+extends the existing top-wall cross-section vertically instead of scaling the
+whole case, so the internal openings, screw bosses, and lower mounting
+geometry remain unchanged.
 
 Run the check with:
 

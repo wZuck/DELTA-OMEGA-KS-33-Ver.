@@ -9,6 +9,7 @@ from rev5_geometry import (
     BOARD_CASE_PAIRS,
     CAP_SKIRT_CORNER_RADIUS,
     CAP_SKIRT_SIZE,
+    CAP_SKIRT_TOP_Z,
     CAP_TOP,
     CAP_TOP_CORNER_RADIUS,
     CASE_RIM_Z,
@@ -40,6 +41,14 @@ def main():
     for side, board_path, case_path, _ in BOARD_CASE_PAIRS:
         board = pcbnew.LoadBoard(str(board_path))
         case_shape = cq.importers.importStep(str(case_path)).val()
+        case_box = case_shape.BoundingBox()
+        if not case_shape.isValid() or len(case_shape.Solids()) != 1:
+            failures.append(f"{side}: case STEP is not one valid solid")
+        if abs(case_box.zmax - CASE_RIM_Z) > 0.01:
+            failures.append(
+                f"{side}: expected case rim z={CASE_RIM_Z:g}, "
+                f"found z={case_box.zmax:.3f}"
+            )
         switches = [
             footprint
             for footprint in board.GetFootprints()
@@ -79,15 +88,17 @@ def main():
 
         print(
             f"{side}: checked {len(switches)} switches; "
-            f"KS-33 {SWITCH_SIZE_X:g} x {SWITCH_SIZE_Y:g} x {SWITCH_HEIGHT:g} mm"
+            f"KS-33 {SWITCH_SIZE_X:g} x {SWITCH_SIZE_Y:g} x {SWITCH_HEIGHT:g} mm; "
+            f"rim z={case_box.zmax:.3f} mm"
         )
 
     print(
         "Keycap envelope: "
         f"{CAP_SKIRT_SIZE:g} mm square r{CAP_SKIRT_CORNER_RADIUS:g} "
-        f"below z={CASE_RIM_Z:g}, {CAP_TOP[0]:g} x {CAP_TOP[1]:g} mm "
-        f"r{CAP_TOP_CORNER_RADIUS:g} above z={CASE_RIM_Z:g}"
+        f"below z={CAP_SKIRT_TOP_Z:g}, {CAP_TOP[0]:g} x {CAP_TOP[1]:g} mm "
+        f"r{CAP_TOP_CORNER_RADIUS:g} above z={CAP_SKIRT_TOP_Z:g}"
     )
+    print(f"Target case rim: z={CASE_RIM_Z:g} mm")
     if failures:
         for failure in failures:
             print(f"FAIL: {failure}", file=sys.stderr)

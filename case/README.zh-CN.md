@@ -2,7 +2,7 @@
 
 # 外壳
 
-Rev5 外壳基于 Rev2 外形，螺丝孔位保持不变，但每个 KS-33 轴位增加了 `15.6 mm`、`r2 mm` 圆角让位。制造时请使用 Rev5 专用 STEP。
+Rev5 外壳基于 Rev2 外形，螺丝孔位保持不变，外沿由 `z = 7.0 mm` 提高到 `z = 8.8 mm`，并为每个 KS-33 轴位增加 `15.2 mm`、`r1.8 mm` 少量让位。壳沿与 `z = 9.0 mm` 的键帽包络顶部基本齐平，以获得更包覆的操作体感。制造时请使用 Rev5 专用 STEP。
 
 - [Rev5 机械说明](../docs/MECHANICAL.zh-CN.md)
 - [键帽允许包络](./delta_omega_rev5_keycap_envelope.step)

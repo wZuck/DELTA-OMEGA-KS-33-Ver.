@@ -2,8 +2,10 @@
 
 # Case
 
-The Rev5 case is derived from the Rev2 outer shell and keeps its screw pattern,
-but adds a `15.6 mm`, `r2 mm` clearance pocket around every KS-33 switch. Use
+The Rev5 case is derived from the Rev2 outer shell, keeps its screw pattern,
+raises the outer rim from `z = 7.0 mm` to `z = 8.8 mm`, and adds a `15.2 mm`,
+`r1.8 mm` clearance pocket around every KS-33 switch. The raised rim is nearly
+level with the `z = 9.0 mm` keycap envelope for a more enclosed typing feel. Use
 the Rev5 STEP files for manufacturing.
 
 - [Rev5 mechanical notes](../docs/MECHANICAL.md)

@@ -2,7 +2,9 @@
 """Apply final manufacturing and DRC polish to a routed Rev5 board."""
 
 from pathlib import Path
+import argparse
 import math
+import subprocess
 import sys
 
 import pcbnew
@@ -40,11 +42,6 @@ def add_track(board, net_name, layer, start, end):
         pcbnew.VECTOR2I(pcbnew.FromMM(end[0]), pcbnew.FromMM(end[1]))
     )
     board.Add(track)
-
-
-def save_and_reload(path, board):
-    pcbnew.SaveBoard(str(path), board)
-    return pcbnew.LoadBoard(str(path))
 
 
 def fix_known_necks(board):
@@ -91,6 +88,77 @@ def fix_known_necks(board):
             (39.85, 44.3),
             (40.021, 44.1673),
         )
+
+
+def remove_battery_location_frame(board):
+    battery_frames = (
+        (59.677459, 97.100001, 83.91245, 113.8),
+        (174.7197, 97.100001, 198.954691, 113.8),
+    )
+    targets = []
+    for drawing in list(board.GetDrawings()):
+        if (
+            not isinstance(drawing, pcbnew.PCB_SHAPE)
+            or drawing.GetLayer() != pcbnew.F_Fab
+        ):
+            continue
+        box = drawing.GetBoundingBox()
+        x = pcbnew.ToMM(box.GetX())
+        y = pcbnew.ToMM(box.GetY())
+        width = pcbnew.ToMM(box.GetWidth())
+        height = pcbnew.ToMM(box.GetHeight())
+        center_x = x + width / 2
+        center_y = y + height / 2
+        perimeter = False
+        for left, top, right, bottom in battery_frames:
+            within_x = left - 0.2 <= center_x <= right + 0.2
+            within_y = top - 0.2 <= center_y <= bottom + 0.2
+            on_horizontal_edge = within_x and (
+                abs(center_y - top) < 0.2 or abs(center_y - bottom) < 0.2
+            )
+            on_vertical_edge = within_y and (
+                abs(center_x - left) < 0.2 or abs(center_x - right) < 0.2
+            )
+            corner_arc = (
+                drawing.GetShape() == pcbnew.SHAPE_T_ARC
+                and 1.0 < width < 2.0
+                and 1.0 < height < 2.0
+                and within_x
+                and within_y
+                and min(
+                    abs(center_x - left),
+                    abs(center_x - right),
+                )
+                < 1.0
+                and min(
+                    abs(center_y - top),
+                    abs(center_y - bottom),
+                )
+                < 1.0
+            )
+            dashed_hatch = (
+                drawing.GetShape() == pcbnew.SHAPE_T_SEGMENT
+                and within_x
+                and within_y
+                and 0.5 < width < 2.0
+                and 0.5 < height < 1.3
+            )
+            if (
+                on_horizontal_edge
+                or on_vertical_edge
+                or corner_arc
+                or dashed_hatch
+            ):
+                perimeter = True
+                break
+        if perimeter:
+            targets.append(drawing)
+
+    # Removing directly while bounding subsequent drawings can invalidate the
+    # KiCad SWIG wrappers on some boards. Collect first, then mutate the board.
+    for drawing in targets:
+        board.Remove(drawing)
+    return len(targets)
 
 
 def remove_redundant_vias(board):
@@ -222,32 +290,51 @@ def polish_footprints_and_text(board):
 
 
 def main():
-    if len(sys.argv) != 2:
-        raise SystemExit("usage: polish_ks33_rev5.py BOARD.kicad_pcb")
-    path = Path(sys.argv[1]).resolve()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("board")
+    parser.add_argument(
+        "--stage",
+        choices=("fix-necks", "battery-frame", "vias"),
+        help=argparse.SUPPRESS,
+    )
+    args = parser.parse_args()
+    path = Path(args.board).resolve()
     if "rev5-ks33" not in path.name:
         raise SystemExit("board must be a Rev5 KS-33 board")
 
-    board = pcbnew.LoadBoard(str(path))
-    for track in board.GetTracks():
-        if (
-            isinstance(track, pcbnew.PCB_TRACK)
-            and not isinstance(track, pcbnew.PCB_VIA)
-            and track.GetWidth() < pcbnew.FromMM(0.2)
-        ):
-            track.SetWidth(pcbnew.FromMM(0.2))
+    if args.stage:
+        board = pcbnew.LoadBoard(str(path))
+        if args.stage == "fix-necks":
+            for track in board.GetTracks():
+                if (
+                    isinstance(track, pcbnew.PCB_TRACK)
+                    and not isinstance(track, pcbnew.PCB_VIA)
+                    and track.GetWidth() < pcbnew.FromMM(0.2)
+                ):
+                    track.SetWidth(pcbnew.FromMM(0.2))
+            fix_known_necks(board)
+        elif args.stage == "battery-frame":
+            remove_battery_location_frame(board)
+        else:
+            remove_redundant_vias(board)
+        if args.stage != "battery-frame":
+            pcbnew.ZONE_FILLER(board).Fill(board.Zones())
+        pcbnew.SaveBoard(str(path), board)
+        return
 
-    fix_known_necks(board)
-    board = save_and_reload(path, board)
+    for stage in ("fix-necks", "battery-frame", "vias"):
+        subprocess.run(
+            [sys.executable, __file__, str(path), "--stage", stage],
+            check=True,
+        )
+
+    board = pcbnew.LoadBoard(str(path))
     added_marks = ensure_diode_polarity_marks(board)
     polish_footprints_and_text(board)
-    board = save_and_reload(path, board)
-    removed_vias = remove_redundant_vias(board)
     pcbnew.ZONE_FILLER(board).Fill(board.Zones())
     pcbnew.SaveBoard(str(path), board)
     print(
-        f"polished {path.name}; removed {removed_vias} redundant via(s); "
-        f"added {added_marks} diode polarity mark(s)"
+        f"polished {path.name}; added {added_marks} diode polarity mark(s)"
     )
 
 

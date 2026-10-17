@@ -12,6 +12,7 @@ from rev5_geometry import (
     CASE_POCKET_SIZE,
     CASE_POCKET_TOP_Z,
     board_to_case,
+    extend_case_rim,
     rounded_box,
     switch_rotation,
 )
@@ -34,6 +35,7 @@ def main():
     for side, board_path, output_path, source_path in BOARD_CASE_PAIRS:
         board = pcbnew.LoadBoard(str(board_path))
         case_shape = cq.importers.importStep(str(source_path)).val()
+        case_shape = extend_case_rim(cq, case_shape)
         cutters = []
         for switch in board.GetFootprints():
             if not switch.GetReference().startswith("SW"):
