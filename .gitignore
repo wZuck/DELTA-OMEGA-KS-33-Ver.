@@ -37,6 +37,10 @@ rescue-backup/
 *.tsv
 bom/
 
+### Python ###
+__pycache__/
+*.py[cod]
+
 # Gerber export output
 out/
 

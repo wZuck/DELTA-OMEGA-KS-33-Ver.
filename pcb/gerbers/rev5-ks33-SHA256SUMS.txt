@@ -1,0 +1,6 @@
+8c1ca797606c4c05dfc5af4a7f9325e63510ef1b6367018150b977885ab700ec  pcb/delta-omega-rev5-ks33-left.kicad_pcb
+df89dc7670db5e634b701cb175684f7514b4c84970aef3c9149f1f2e922932c0  pcb/delta-omega-rev5-ks33-right.kicad_pcb
+d26ac0a3f3f3a6a4ad7dfa54d66175d15a7a36a913d0558f953a3cbbb3b76d1d  pcb/delta-omega-rev5-ks33-both.kicad_pcb
+478544582a5ef43e16e1f8c322b01d5d0c708be257aeca71b433e1d8328de0f5  pcb/gerbers/delta-omega-rev5-ks33-left.zip
+1c7e4f76efd2515e88270c211b813bc71ce49cc7c04b22f095b0ecb2fddae103  pcb/gerbers/delta-omega-rev5-ks33-right.zip
+4f5e67a91b4a725fa074de76be6edeff4acaa283a548c654058cc63b61122898  pcb/gerbers/delta-omega-rev5-ks33-both.zip

@@ -1,0 +1,8 @@
+--- a/config/delta_omega.keymap
++++ b/config/delta_omega.keymap
+@@ -75,4 +75,4 @@
+         R_Gui_Alt {
+-            bindings = <&kp LG(LALT)>;
++            bindings = <&kp RG(RALT)>;
+             key-positions = <16 19 18>;
+         };

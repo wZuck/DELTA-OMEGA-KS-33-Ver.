@@ -1,3 +1,5 @@
+[English](GETTING_STARTED.md) | [简体中文](GETTING_STARTED.zh-CN.md)
+
 # Getting Started
 
 Please read this document carefully before beginning your build.
@@ -5,61 +7,55 @@ It may be long and tedious, but every section is written with only the most esse
 
 ## Step 1: Choosing Your Switches
 
-This keyboard supports **Cherry MX ULP** or **Kailh PG1316S** switches.
+Rev5 uses **Gateron KS-33 Low Profile 3.0** switches with the five-pin MX
+PCB layout.
 
-![Switches](./images/two_switch.png)
+The Rev5 footprint uses:
 
-### Cherry MX ULP
-Developed by Cherry, available in both clicky and tactile versions.
-- Actuation force: 65 gf (relatively heavy)
-- Availability: very limited. both switches and compatible keycaps are difficult to source
+- Standard MX electrical-pin coordinates
+- A 5.0 mm center hole
+- 1.70 mm locator holes at ±5.08 mm
+- Direct solder pins, not hot-swap sockets
 
-#### Where to Buy
-- Large distributors such as Mouser (very expensive)
-- Geonworks (appears to be restricted to the Korean domestic market)
+Use the **3.0** generation specifically. Earlier Gateron KS-33 generations use
+a different PCB pin layout and cannot be substituted on this board.
 
-- Or, harvesting parts by desoldering from some commercial products. More details [here](https://github.com/pashutk/Cherry_MX_ULP).
+The original Rev4 files still support Cherry MX ULP or Kailh PG1316S for anyone
+who wants to build the older design.
 
-### Kailh PG1316s
-Developed by Kailh, with specifications and mechanism very similar to Cherry MX ULP.
-- Actuation force: 35 gf, 65 gf
-- Easier to source than Cherry MX ULP
-- Often sold together with compatible keycaps
-
-#### Where to Buy *(unverified)*
-- Modulo Industries (US)
-- Holykeebs (US)
-- Keycapsss (EU)
-
-### Which Should You Choose?
-It largely depends on availability. Due to market scarcity, the **best switch is usually the one you can actually get** at the time of building. and don't forget the acuation force.
+Reference: [Gateron KS-33 Low Profile 3.0](https://www.gateron.com/products/gateron-ks-33-low-profile-30-mechanical-switch)
 
 ## Keycaps
 
-The DELTA OMEGA uses **Choc spacing (18 × 17 mm)**.
-- Standard ULP keycaps are **16 × 16 mm**. Using them will leave visible gaps between keys. Functionally this is fine, but low height and little wider gaps with higher quality. Refer to [Dell's Stock Cherry ULP Keycap Image](./../gallery/doo4.webp) and [Custom printed Keycap Image](./../gallery/d2.webp).
+The DELTA OMEGA uses **18 × 17 mm key pitch**. KS-33 3.0 has an MX-compatible
+stem, but that does not mean every MX keycap will fit.
 
-#### Suggested Approach
-- Consider custom-printed ULP keycaps. Be aware: due to thin walls, 3D printed ULP keycaps can be fragile and prone to printing issues.
-- You can loot keycaps from repair modules or broken parts of Dell laptop keyboards that use some Cherry MX ULP switches. Check [here](https://github.com/pashutk/Cherry_MX_ULP?tab=readme-ov-file#where-to-source) for reference.
+- Use compact low-profile MX keycaps whose bottom footprint stays clear at a
+  17 mm row pitch.
+- Test adjacent keycaps before final assembly. Standard 19.05 mm-spaced MX
+  keycaps can collide between rows.
+- Custom-printed low-profile MX keycaps are the most predictable option.
 
-
-- Removing ULP keycaps is difficult; my chosen method is to use FDM-printed keycaps and destroy them (cut with a soldering iron or nippers) when replacements are needed.
-
-> [!TIP]
-> [@mikeholscher’s notes on removing keycaps](https://github.com/mikeholscher/zmk-config-mikecinq?tab=readme-ov-file#about-removing-keycaps) may be helpful.
-
-![Keycap and case height](./images/keycapandcase.png)
+![Rev5 keycap fit envelope](./images/rev5_keycap_envelope.svg)
 
 #### Height Considerations
-The DELTA OMEGA prioritizes portability, so the case is slightly taller than the switches.
-- Ideally, the keycap should sit just below the case edge (≈0.3 mm).
-- Some users may find this uncomfortable. consider high-profile keycaps as an alternative.
+The Rev5 case has a `15.6 mm`, `r2 mm` relief pocket at every switch and has
+been checked against the KS-33 3.0 body. The keycap must stay within the
+rounded envelope: `14 x 14 mm`, `r3.5 mm` below the rim and
+`16.6 x 15.6 mm`, `r7.0 mm` above it. See the
+[Rev5 mechanical notes](MECHANICAL.md) and supplied STEP fit envelope.
 
 ## Soldering
 
-Both switch types are SMT by default, designed for hot plate or reflow soldering.
-To make the board more approachable, footprints were modified for **hand soldering**. This still requires moderate skills.
+The KS-33 3.0 switch pins and the separate 1N4148WS diodes are designed for
+manual soldering. A hot plate or reflow process is not required.
+
+1. Solder the SOD-323 diodes before installing the switches.
+2. Dry-fit each switch. All five posts must enter without force.
+3. Solder the two electrical pins from the back of the PCB.
+4. Do not fill the center or locator holes with solder.
+5. Trim the electrical pins to no more than 0.5 mm below the PCB and insulate
+   any exposed metal before fitting the bottom cover.
 
 ## PCB
 
@@ -79,11 +75,12 @@ Cost difference is negligible (1~2 USD), so choose based on preference.
 
 ![PCB Stack](./images/pcb_stack.png)
 
-Options:
-- Single 1.6mm PCB
-- Combination of 0.8mm main PCB + 0.8mm bottom cover
+For Rev5:
+- Use a **1.6 mm main PCB**. The KS-33 locator pegs are 1.2 mm long and the
+  electrical pins are 3.0 mm long.
+- Use an optional 0.8 mm PCB bottom cover if that construction is desired.
 
-If not an issue, you can freely choose thickness.
+The older Rev4 0.8 mm main-PCB stack is not recommended for Rev5.
 
 > [!TIP]
 > The cover can be countersunk for a flat bottom. Note that 0.8mm is too thin for a perfect countersink, and the lower right corner (on the left half) is especially challenging.

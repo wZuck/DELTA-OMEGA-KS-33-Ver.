@@ -1,3 +1,5 @@
+[English](BUILD_GUIDES.md) | [简体中文](BUILD_GUIDES.zh-CN.md)
+
 # Build Guides
 
 This document covers the **hand-solder version** of the build process.
@@ -79,33 +81,37 @@ As with the power switch, correct alignment is important (boss features assist h
 
 ![Diode](./images/diodes.png)
 
-1. Orientation is critical: align the diode’s polarity marking with the silkscreen.
-2. Due to limited space (ULP switches share space originally intended for LEDs), apply a **minimal solder amount**, centered between pads.
+Rev5 uses one **SOD-323 1N4148WS** diode per key. The diode is outside the
+switch body so it does not interfere with the KS-33 housing.
 
-> [!TIP]
-> After soldering, temporarily place the switch above the diode to confirm there is no interference. and testing!
+1. Orientation is critical. Align the cathode marking with pad 1 and the PCB silkscreen.
+2. Tin one pad, place the diode, then solder the second pad.
+3. Inspect each joint under magnification before installing switches.
 
 ## Switches
 
-![Switch](./images/switch.png)
+![Rev5 KS-33 PCB](./images/rev5_ks33_left.png)
 
-This is often the most time-consuming step.
+Rev5 uses direct-solder Gateron KS-33 Low Profile 3.0 switches. It does not use
+hot-swap sockets.
 
-1. If castellated holes were not ordered, the through-holes may be damaged or deformed. Carefully trim protruding copper with a knife or nippers. Take care not to peel off the copper entirely.
-2. Apply a small amount of solder to one pad.
-3. Position the switch and reflow to tack it in place.
-4. Solder the opposite pad, then the remaining corners (usually four points are sufficient).
+1. Dry-fit each switch before soldering. All five posts must enter without force.
+2. Confirm the switch is fully seated and the stem is not rotated.
+3. Solder one electrical pin from the PCB backside, then check alignment.
+4. Solder the second electrical pin.
+5. Do not fill the center or locator holes with solder.
+6. Trim both electrical pins to no more than 0.5 mm below the PCB, then
+   insulate any exposed metal before fitting the bottom cover.
 
-![Kailh](./images/sw_back_kailh.png)
-![Cherry](./images/sw_back_cherry.png)
-
-Flip the board to solder the switch contact points:
-
-- Ensure good contact between the switch terminals and the through-hole walls.
-- Use flux and controlled heat so solder bonds properly to both.
+- The center hole is 5.0 mm.
+- The two locator holes are 1.70 mm at ±5.08 mm.
+- The two electrical pins use standard MX coordinates.
+- The electrical pins are 3.0 mm long, so a 1.6 mm PCB leaves about 1.4 mm
+  protruding before trimming.
 
 > [!TIP]
-> Above each switch are two small test pads. Use a multimeter in diode mode to confirm continuity (flow direction: right → left).
+> After each switch, use continuity/diode mode to verify the switch and its
+> series diode. This is much easier before the case is assembled.
 
 ## MCU Controller
 

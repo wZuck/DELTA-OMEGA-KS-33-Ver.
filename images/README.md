@@ -1,3 +1,7 @@
+[English](README.md) | [简体中文](README.zh-CN.md)
+
+# Prototype Gallery
+
 ![d1](./do1.webp)
 ![d2](./do2.webp)
 ![d3](./do3.webp)

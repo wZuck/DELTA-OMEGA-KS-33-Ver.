@@ -1,13 +1,15 @@
+[English](BOM.md) | [简体中文](BOM.zh-CN.md)
+
 # Bill of Materials
 
 | Component        | Specification                                              | Quantity | Notes  |
 |------------------|------------------------------------------------------------|----------|--------|
 | MCU Controller   | SeeedStudio XIAO nRF52840                                  | 2        |        |
-| ULP Switches     | Cherry MX ULP or Kailh PG1316s                             | 34       |        |
-| ULP Keycap       |                                                            | 34       |        |
+| LP MX Switches   | Gateron KS-33 Low Profile 3.0 five-pin; reference `KS-33BS10B043NW-Y92B` | 34 | Direct solder, not hot-swap; verify the 3.0 PCB drawing |
+| LP MX Keycaps    | MX stem; rounded fit envelope: 14×14 r3.5 below rim, 16.6×15.6 r7 above | 34 | See mechanical notes; square-corner MX caps may collide |
 | Power Switches   | MK-12C02                                                   | 2        |        |
 | Reset Switches   | EVQ-PUL02K                                                 | 2        | Compatible with EVQ-PU[A\|C\|J\|L]02K |
-| Diodes           | SOD-123                                                    | 34       | 1N4148W |
+| Diodes           | SOD-323                                                    | 34       | 1N4148WS |
 | Batteries        | 3.7 V LiPo                                                 | 2        | Maximum size: 25.2 mm × 17.7 mm × 4.2 mm |
 | Screws           | M2 × 3 mm                                                  | 10       | If countersink is not used, choose ultra-low head screws (ex. 0.8 mm) |
 | LEDs             | 0805 (2012 Metric)                                         | 6        | Optional |

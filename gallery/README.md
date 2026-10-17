@@ -1,3 +1,7 @@
+[English](README.md) | [简体中文](README.zh-CN.md)
+
+# Gallery
+
 ![d21](./doo1.webp)
 ![d21](./doo2.webp)
 ![d21](./doo3.webp)

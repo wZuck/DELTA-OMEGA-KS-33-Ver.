@@ -1,0 +1,7 @@
+(version 1)
+
+# The XIAO nRF52840 footprint intentionally uses castellated edge pads.
+# Keep the normal 0.2 mm edge rule everywhere else.
+(rule "XIAO2 castellated edge"
+    (condition "A.memberOfFootprint('MCU2') || B.memberOfFootprint('MCU2')")
+    (constraint edge_clearance (min -1mm)))
